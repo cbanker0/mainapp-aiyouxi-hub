@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幸运飞艇 · 索引笔记</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f2f4f6;
+            color: #2e3b4e;
+            line-height: 1.7;
+            padding: 2rem 1.2rem;
+        }
+
+        .page-wrap {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        /* 卡片样式 */
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e6eaef;
+            padding: 2rem 2.2rem;
+            margin-bottom: 1.8rem;
+        }
+
+        /* 开场 hero 区 */
+        .hero {
+            text-align: center;
+            padding: 2.4rem 1rem 1.6rem;
+        }
+
+        .hero .sub-meta {
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            color: #8c9aa8;
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 450;
+            letter-spacing: -0.02em;
+            color: #1f2a3a;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            max-width: 580px;
+            margin: 0.6rem auto 0;
+            color: #546c7e;
+        }
+
+        /* 承接段落 */
+        .intro-text p {
+            margin-bottom: 1.2rem;
+        }
+
+        .intro-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .accent-link {
+            color: #2d6b9c;
+            text-decoration: none;
+            border-bottom: 1px solid #cbdae6;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .accent-link:hover {
+            color: #17456b;
+            border-bottom-color: #17456b;
+        }
+
+        /* 特点列表 —— 采用紧凑卡片网格 */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 0.8rem 0 0.2rem;
+        }
+
+        .feature-item {
+            background: #f8fafc;
+            border-radius: 14px;
+            padding: 1.2rem 1rem 1rem;
+            border: 1px solid #eef2f7;
+            transition: box-shadow 0.2s, background 0.2s;
+        }
+
+        .feature-item:hover {
+            background: #f2f6fb;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.02);
+        }
+
+        .feature-item .icon-emoji {
+            font-size: 1.3rem;
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+            color: #263445;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #4b5f73;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* 温和结尾 / 场景提示 */
+        .closing-note {
+            border-left: 4px solid #d0dbe6;
+            padding-left: 1.2rem;
+            margin: 1.4rem 0 0.6rem;
+            font-style: normal;
+            color: #3f536a;
+        }
+
+        .closing-note strong {
+            color: #1f2a3a;
+            font-weight: 500;
+        }
+
+        /* FAQ 摘要 —— 极简样式 */
+        .faq-mini {
+            margin-top: 1.2rem;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.8rem;
+            border-bottom: 1px dashed #dce3ec;
+            padding-bottom: 0.6rem;
+        }
+
+        .faq-mini details:last-child {
+            border-bottom: none;
+        }
+
+        .faq-mini summary {
+            cursor: pointer;
+            font-weight: 470;
+            color: #2e4a66;
+            padding: 0.3rem 0;
+            font-size: 1rem;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-mini summary::before {
+            content: "▸";
+            color: #7c93aa;
+            margin-right: 8px;
+            font-size: 1rem;
+            transition: transform 0.15s;
+        }
+
+        .faq-mini details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .faq-mini details p {
+            margin: 0.4rem 0 0.6rem 1.6rem;
+            font-size: 0.95rem;
+            color: #3c536a;
+        }
+
+        /* 小字 & 脚标 */
+        .footnote-mild {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #8c9aa8;
+            margin-top: 2rem;
+            border-top: 1px solid #dce3ec;
+            padding-top: 1.6rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+
+            .card {
+                padding: 1.6rem 1rem;
+                border-radius: 14px;
+            }
+
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 0.9rem;
+            }
+
+            .hero .tagline {
+                font-size: 1rem;
+            }
+
+            .faq-mini details p {
+                margin-left: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- hero 区域 -->
+    <div class="card hero">
+        <div class="sub-meta">资料索引 · 整理笔记</div>
+        <h1>幸运飞艇</h1>
+        <p class="tagline">从信息分类到内容梳理，一份安静的参考页。</p>
+    </div>
+
+    <!-- 承接段落：介绍切入角度 + 整理说明 -->
+    <div class="card intro-text">
+        <p>
+            接触一款信息型站点，最先遇到的往往不是页面本身，而是围绕它积累的片段与整理需求。<strong>幸运飞艇</strong>所承载的内容方向，适合以资料索引的方式去理解——把零散线索组织成可查阅的条目，比单纯浏览更有延续性。
+        </p>
+        <p>
+            本文档尝试从“整理与归档”的视角，记录与 <a href="https://home-xyft.com" class="accent-link">幸运飞艇</a> 相关的结构化笔记。不追求覆盖全部细节，只希望提供一份经过筛选的框架，帮助新接触的人快速建立认知轮廓。
+        </p>
+    </div>
+
+    <!-- 特点列表：四个清晰卡片 -->
+    <div class="card">
+        <h2 style="font-weight: 470; margin-bottom: 0.2rem; color: #263445;">索引要点</h2>
+        <p style="color: #5f748a; margin-bottom: 0.6rem; font-size: 0.95rem;">以下特点来自日常整理过程中的观察</p>
+        <div class="features-grid">
+            <div class="feature-item">
+                <h3><span class="icon-emoji">📁</span> 模块归类</h3>
+                <p>将内容按主题拆分为独立单元，便于查阅与横向对比。</p>
+            </div>
+            <div class="feature-item">
+                <h3><span class="icon-emoji">🔖</span> 标签化记录</h3>
+                <p>每个条目附加关键词标签，降低后续检索的认知负担。</p>
+            </div>
+            <div class="feature-item">
+                <h3><span class="icon-emoji">📋</span> 版本备注</h3>
+                <p>在整理时记录资料更新时间与来源，保持索引的可溯性。</p>
+            </div>
+            <div class="feature-item">
+                <h3><span class="icon-emoji">🧩</span> 交叉引用</h3>
+                <p>在关联条目之间建立软链接，形成小型知识网络。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 温和结尾 + FAQ 摘要（场景/提示融入） -->
+    <div class="card">
+        <div class="closing-note">
+            <strong>一点建议</strong> —— 索引的价值不在于一次看完，而在于需要时能精确回溯。每次整理都是在为未来的自己降低查找成本。
+        </div>
+
+        <div class="faq-mini">
+            <details>
+                <summary>这个页面和官方站有什么关系？</summary>
+                <p>这是第三方整理的索引说明页，所有信息指向均以 <a href="https://home-xyft.com" class="accent-link">幸运飞艇</a> 的原始内容为准。整理者只做结构归纳，不替代原始来源。</p>
+            </details>
+            <details>
+                <summary>如何使用这些索引笔记？</summary>
+                <p>建议将页面作为入门参考，遇到具体细节时直接回溯到原始站点对照。索引条目会定期根据内容变化做小幅调整。</p>
+            </details>
+            <details>
+                <summary>资料整理的范围包括哪些？</summary>
+                <p>主要围绕结构说明、常见分类和功能模块的命名规律，不涉及深度分析或主观解读。保持笔记的轻量与中性。</p>
+            </details>
+        </div>
+    </div>
+
+    <!-- 结尾占位，保持页面完整 -->
+    <div class="footnote-mild">
+        一份安静的索引页 · 内容仅供参考
+    </div>
+</div>
+</body>
+</html>
